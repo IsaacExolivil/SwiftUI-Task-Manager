@@ -15,6 +15,7 @@
 		A007071F2857A6F900A847F7 /* Notas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A007071D2857A6F900A847F7 /* Notas.xcdatamodeld */; };
 		A04D2D412857CFE00070ABB6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D2D402857CFE00070ABB6 /* Home.swift */; };
 		A04D2D452857D43F0070ABB6 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D2D442857D43F0070ABB6 /* TaskViewModel.swift */; };
+		A04D2D472857E01A0070ABB6 /* AddNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D2D462857E01A0070ABB6 /* AddNewTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A007071E2857A6F900A847F7 /* Notas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notas.xcdatamodel; sourceTree = "<group>"; };
 		A04D2D402857CFE00070ABB6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		A04D2D442857D43F0070ABB6 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		A04D2D462857E01A0070ABB6 /* AddNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				A04D2D402857CFE00070ABB6 /* Home.swift */,
+				A04D2D462857E01A0070ABB6 /* AddNewTask.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				A04D2D452857D43F0070ABB6 /* TaskViewModel.swift in Sources */,
 				A00707152857A6F500A847F7 /* ContentView.swift in Sources */,
 				A04D2D412857CFE00070ABB6 /* Home.swift in Sources */,
+				A04D2D472857E01A0070ABB6 /* AddNewTask.swift in Sources */,
 				A00707132857A6F500A847F7 /* NotasApp.swift in Sources */,
 				A007071F2857A6F900A847F7 /* Notas.xcdatamodeld in Sources */,
 			);
