@@ -13,6 +13,8 @@
 		A007071A2857A6F900A847F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00707192857A6F900A847F7 /* Preview Assets.xcassets */; };
 		A007071C2857A6F900A847F7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A007071B2857A6F900A847F7 /* Persistence.swift */; };
 		A007071F2857A6F900A847F7 /* Notas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A007071D2857A6F900A847F7 /* Notas.xcdatamodeld */; };
+		A04D2D412857CFE00070ABB6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D2D402857CFE00070ABB6 /* Home.swift */; };
+		A04D2D452857D43F0070ABB6 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D2D442857D43F0070ABB6 /* TaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		A00707192857A6F900A847F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A007071B2857A6F900A847F7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A007071E2857A6F900A847F7 /* Notas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notas.xcdatamodel; sourceTree = "<group>"; };
+		A04D2D402857CFE00070ABB6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		A04D2D442857D43F0070ABB6 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 		A00707112857A6F500A847F7 /* Notas */ = {
 			isa = PBXGroup;
 			children = (
+				A00707262857CF4100A847F7 /* ViewModel */,
+				A00707252857CF3800A847F7 /* View */,
 				A00707122857A6F500A847F7 /* NotasApp.swift */,
 				A00707142857A6F500A847F7 /* ContentView.swift */,
 				A00707162857A6F900A847F7 /* Assets.xcassets */,
@@ -71,6 +77,22 @@
 				A00707192857A6F900A847F7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A00707252857CF3800A847F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A04D2D402857CFE00070ABB6 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A00707262857CF4100A847F7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A04D2D442857D43F0070ABB6 /* TaskViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A007071C2857A6F900A847F7 /* Persistence.swift in Sources */,
+				A04D2D452857D43F0070ABB6 /* TaskViewModel.swift in Sources */,
 				A00707152857A6F500A847F7 /* ContentView.swift in Sources */,
+				A04D2D412857CFE00070ABB6 /* Home.swift in Sources */,
 				A00707132857A6F500A847F7 /* NotasApp.swift in Sources */,
 				A007071F2857A6F900A847F7 /* Notas.xcdatamodeld in Sources */,
 			);
@@ -275,7 +299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Notas/Preview Content\"";
-				DEVELOPMENT_TEAM = 6DU3L2R2KG;
+				DEVELOPMENT_TEAM = 9TM8LY638F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -304,7 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Notas/Preview Content\"";
-				DEVELOPMENT_TEAM = 6DU3L2R2KG;
+				DEVELOPMENT_TEAM = 9TM8LY638F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
