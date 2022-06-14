@@ -18,6 +18,31 @@ class TaskViewModel: ObservableObject {
     @Published var taskColor: String = "Yellow"
     @Published var taskDeadline: Date = Date()
     @Published var taskType: String = "Basic"
+    @Published var showDataPicker: Bool = false
+    
+    //MARK: añadir tarea a Core Data
+    
+    func addTask(context: NSManagedObjectContext)->Bool{
+        let task = Task(context: context)
+        task.title = taskTitle
+        task.color = taskColor
+        task.deadline = taskDeadline
+        task.type = taskType
+        task.isCompleted = false
+        
+        if let _ = try? context.save(){
+            return true
+            
+        }
+        return false
+        
+    }
+    func resetTaskData() {
+        taskType = "Basic"
+        taskColor = "Yellow"
+        taskTitle = ""
+        taskDeadline = Date()
+    }
    
 }
 
