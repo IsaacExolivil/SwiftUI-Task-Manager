@@ -11,6 +11,8 @@ import CoreData
 class TaskViewModel: ObservableObject {
     @Published var currentTab: String = "Today"
     
+    
+    
     // MARK: Nueva tarea Propiedades
     
     @Published var openEditTask: Bool = false
@@ -21,10 +23,21 @@ class TaskViewModel: ObservableObject {
     @Published var showDataPicker: Bool = false
     @Published var colaboracion: String =  ""
     
+    
+    //editar tarea
+    @Published var editTask: Task?
+    
     //MARK: añadir tarea a Core Data
     
     func addTask(context: NSManagedObjectContext)->Bool{
-        let task = Task(context: context)
+        
+        var task: Task!
+        if let editTask = editTask {
+            task = editTask
+        } else {
+            task = Task(context: context)
+        }
+
         task.title = taskTitle
         task.color = taskColor
         task.deadline = taskDeadline
@@ -46,6 +59,18 @@ class TaskViewModel: ObservableObject {
         taskTitle = ""
         taskDeadline = Date()
         colaboracion = ""
+    }
+    
+    //Funcion para editar la tarea si existe
+    
+    func setupTask(){
+        if let editTask = editTask {
+            taskType = editTask.type ?? "Basic"
+            taskColor = editTask.color ?? "Yellow"
+            taskTitle = editTask.title ?? ""
+            taskDeadline = editTask.deadline ?? Date()
+            colaboracion = editTask.colaboracion ?? ""
+        }
     }
    
 }

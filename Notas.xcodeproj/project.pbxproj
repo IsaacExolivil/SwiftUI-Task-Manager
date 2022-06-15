@@ -48,14 +48,14 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		A05A477E2859987E009761A0 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
 				A05A477D2859987E009761A0 /* Notas Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		A05A47812859987E009761A0 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -554,7 +554,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9TM8LY638F;
+				DEVELOPMENT_TEAM = 6DU3L2R2KG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Notas_Watch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "Notas Watch";
@@ -580,7 +580,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9TM8LY638F;
+				DEVELOPMENT_TEAM = 6DU3L2R2KG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Notas_Watch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "Notas Watch";

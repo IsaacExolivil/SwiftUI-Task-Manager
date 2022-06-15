@@ -8,9 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    //MARK: Matched Geometry Namespace
+    @Namespace var animation
+    
+    
     var body: some View {
-        Text("Hello, World!")
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack{
+                VStack(alignment: .leading, spacing: 18) {
+                    Text("Welcome Isaac")
+                        .font(.callout)
+                    Text("Here's Update Today.")
+                        .font(.subheadline)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.vertical)
+               
+            }
             .padding()
+            
+        }
     }
 }
 
