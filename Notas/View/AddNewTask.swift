@@ -49,7 +49,8 @@ struct AddNewTask: View {
             
             TaskTitle()
                 .padding(.top,10)
-            Divider()
+           
+             
             TaskType()
                 .padding(.top,10)
             Divider()
@@ -133,10 +134,35 @@ func TaskTitle()->some View {
         TextField("", text: $taskModel.taskTitle)
             .frame(maxWidth: .infinity)
             .padding(.top,10)
+        Divider()
+            .padding(.top,10)
+        Text("Teamwork:")
+            .font(.caption)
+        .foregroundColor(.gray)
+        TextField("", text: $taskModel.colaboracion)
+            .frame(maxWidth: .infinity)
+            .padding(.top,10)
+        Divider()
+       
     }
+    
    
     
  }
+    func TaskColaboración()->some View {
+        VStack(alignment:.leading, spacing: 12) {
+            Text("TeamWork:")
+            Text("Collaborations:")
+                .font(.caption)
+            .foregroundColor(.gray)
+            
+            TextField("", text: $taskModel.colaboracion)
+                .frame(maxWidth: .infinity)
+                .padding(.top,10)
+        }
+       
+        
+     }
     
 func TaskDeadline()-> some View {
     VStack(alignment: .leading, spacing: 12) {

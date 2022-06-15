@@ -16,7 +16,6 @@ struct Home: View {
     //MARK: Fetching Task
     @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.deadline, ascending: false)], predicate: nil, animation: .easeInOut) var tasks: FetchedResults<Task>
     
-    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack{
@@ -31,6 +30,8 @@ struct Home: View {
                 
                 CustomSegmentedBar()
                     .padding(.top, 5)
+                //MARK: Task View
+                TaskView()
             }
             .padding()
             
@@ -61,23 +62,26 @@ struct Home: View {
             AddNewTask()
                 .environmentObject(taskModel)
         }
+        
     }
     
-    
-    // MARK: TaskView
     @ViewBuilder
-    func Taskview()->some View {
-        LazyVStack(spacing: 20){
+    func TaskView()->some View {
+        LazyVStack(spacing: 20) {
             ForEach(tasks){task in
+                
+                //Mostramos nuestras alertas de Pendientes
                 TaskRowView(task: task)
                 
             }
+            Text("Hola guapo")
         }
         .padding(.top,20)
     }
-    // MARK: Task Row View
+    
+    
     @ViewBuilder
-    func TaskRowView(task: Task)->some View {
+    func TaskRowView(task: Task)-> some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack{
                 Text(task.type ?? "")
@@ -89,18 +93,31 @@ struct Home: View {
                             .fill(.white.opacity(0.3))
                     }
                 Spacer()
+                Image("memoji")
+                   .resizable()
+                    .frame(width: 65, height: 65)
                 
-                //MARK: Editar boton solo si no esta completo
-                if !task.isCompleted{
+                
+                if !task.isCompleted {
                     Button {
-                        
+                        print("Editar")
                     } label: {
                         Image(systemName: "square.and.pencil")
                             .foregroundColor(.black)
                     }
                 }
+               
             }
-          
+            Text(task.title ?? "")
+                .font(.title2.bold())
+                .foregroundColor(.black)
+                .padding(.vertical,10)
+            
+            //Vista de datos extras
+            extras(task: task)
+            
+            
+            
         }
         .padding()
         .frame(maxWidth: .infinity)
@@ -108,14 +125,59 @@ struct Home: View {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .fill(Color(task.color ?? "Yellow"))
         }
+    }
+    
+    @ViewBuilder
+    func extras(task: Task)->some View {
+        HStack(alignment: .bottom, spacing: 0) {
+            VStack(alignment: .leading, spacing: 15) {
+                Label {
+                    Text((task.deadline ?? Date()).formatted(date: .long, time: .omitted))
+                } icon: {
+                    Image(systemName: "calendar")
+                }
+                .font(.caption)
+                
+                Label {
+                    Text((task.deadline ?? Date()).formatted(date: .omitted, time: .shortened))
+                } icon: {
+                    Image(systemName: "clock")
+                }
+                .font(.caption)
+                Text(task.colaboracion ?? "")
+                    .font(.title3)
+                    .foregroundColor(.black)
+                    .padding(.vertical,0)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            if !task.isCompleted{
+                Button{
+                    
+                } label: {
+                    Circle()
+                        .strokeBorder(.black, lineWidth: 1.5)
+                        .frame(width: 25, height: 25)
+                        .contentShape(Circle())
+                }
+            }
+            
+        }
         
     }
+    
+    
+    
+    
+  
+   
+    
     
     
     // MARK: Custom Segmented Bar
     @ViewBuilder
     func CustomSegmentedBar()->some View {
-        let tabs = ["Today", "Upcoming", "Task Done"]
+        let tabs = ["Today", "Upcoming", "Task Donee"]
         HStack(spacing: 10) {
             ForEach(tabs,id: \.self){tab in
                 Text(tab)

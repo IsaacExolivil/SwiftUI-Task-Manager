@@ -19,6 +19,7 @@ class TaskViewModel: ObservableObject {
     @Published var taskDeadline: Date = Date()
     @Published var taskType: String = "Basic"
     @Published var showDataPicker: Bool = false
+    @Published var colaboracion: String =  ""
     
     //MARK: añadir tarea a Core Data
     
@@ -29,6 +30,7 @@ class TaskViewModel: ObservableObject {
         task.deadline = taskDeadline
         task.type = taskType
         task.isCompleted = false
+        task.colaboracion = colaboracion
         
         if let _ = try? context.save(){
             return true
@@ -37,11 +39,13 @@ class TaskViewModel: ObservableObject {
         return false
         
     }
+    
     func resetTaskData() {
         taskType = "Basic"
         taskColor = "Yellow"
         taskTitle = ""
         taskDeadline = Date()
+        colaboracion = ""
     }
    
 }
